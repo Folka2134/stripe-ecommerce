@@ -1,10 +1,26 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+
+} from "react-router-dom";
+import { NavBar } from "./components/NavBar";
 import { HomePage } from "./pages/HomePage/HomePage"
+import { CheckoutPage } from "./pages/Checkout/CheckoutPage";
 
 const App = () => {
   return (
-    <div>
-      <HomePage />
-    </div>
+    <Router>
+      <div>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<HomePage />}>
+          </Route>
+          <Route path="/checkout" element={<CheckoutPage />}>
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
