@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const NavBar = () => {
   return (
-    <nav className='mb-12 h-12 w-full flex items-center bg-slate-500'>
+    <nav className='h-12 w-full flex items-center bg-slate-500'>
       <ul className='ml-6 flex'>
         <li>
           <Link to="/" className=''><span className='cursor-pointer'><AiFillHome size={25} /></span></Link>
