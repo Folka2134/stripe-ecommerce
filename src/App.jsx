@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 import { HomePage } from "./pages/HomePage/HomePage"
-import { CheckoutPage } from "./pages/Checkout/CheckoutPage";
+import { ShoppingCart } from "./pages/ShoppingCart/ShoppingCart";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<HomePage />}>
           </Route>
-          <Route path="/checkoutpage" element={<CheckoutPage />}>
+          <Route path="/shoppingcart" element={<ShoppingCart />}>
           </Route>
         </Routes>
       </div>

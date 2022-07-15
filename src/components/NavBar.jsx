@@ -11,7 +11,7 @@ export const NavBar = () => {
           <Link to="/" className=''><span className='cursor-pointer'><AiFillHome size={25} /></span></Link>
         </li>
         <li>
-          <Link to="/checkoutpage"><span className='cursor-pointer'><BsFillBasket2Fill size={25} /></span></Link>
+          <Link to="/shoppingcart"><span className='cursor-pointer'><BsFillBasket2Fill size={25} /></span></Link>
         </li>
       </ul>
     </nav>
