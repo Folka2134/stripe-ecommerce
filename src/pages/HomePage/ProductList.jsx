@@ -6,7 +6,7 @@ import { Product } from './Product'
 export const ProductList = ({ products }) => {
   // console.log(products[0].image.url);
   return (
-    <div className='flex'>
+    <div className='flex w-full bg-purple-400'>
       {products.map((product) => (
         <Product key={product.id} product={product} />
       ))}
