@@ -1,10 +1,10 @@
 import React from 'react'
 import { ContentContainer } from '../../components/ContentContainer'
 
-export const HomePage = () => {
+export const HomePage = ({ products }) => {
   return (
     <div className='px-12 h-screen w-full bg-slate-100'>
-      <ContentContainer title="Products" />
+      <ContentContainer title="Products" products={products} />
     </div>
   )
 }
