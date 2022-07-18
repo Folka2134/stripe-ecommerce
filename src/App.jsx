@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <Router>
-      <div>
+      <div className="bg-slate-100">
         <NavBar />
         <Routes>
           <Route exact path="/" element={<HomePage products={products} featuredProducts={featuredProducts} />}>
