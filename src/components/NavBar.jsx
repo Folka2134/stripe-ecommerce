@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiFillHome } from 'react-icons/ai'
 import { BsFillBasket2Fill } from 'react-icons/bs'
+import { ImBin2 } from 'react-icons/im'
 import { Link } from "react-router-dom";
 
 export const NavBar = ({ emptyCart }) => {
@@ -14,7 +15,7 @@ export const NavBar = ({ emptyCart }) => {
           <Link to="/shoppingcart"><span className='cursor-pointer'><BsFillBasket2Fill size={25} /></span></Link>
         </li>
         <li>
-          <button onClick={() => emptyCart()}>empty</button>
+          <button onClick={() => emptyCart()}><span><ImBin2 size={25} /></span></button>
         </li>
       </ul>
     </nav>
