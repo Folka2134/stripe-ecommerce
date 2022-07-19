@@ -32,7 +32,7 @@ const App = () => {
   }
 
   const emptyCart = async () => {
-    const cart = await commerce.cart.empty()
+    const { cart } = await commerce.cart.empty()
     setCart(cart)
   }
 
@@ -53,6 +53,7 @@ const App = () => {
 
   fetchFeaturedProducts()
 
+  console.log(cart);
   return (
     <Router>
       <div className="bg-slate-100">
