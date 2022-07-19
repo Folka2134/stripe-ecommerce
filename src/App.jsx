@@ -53,7 +53,7 @@ const App = () => {
 
   fetchFeaturedProducts()
 
-  console.log(cart);
+  // console.log(cart);
   return (
     <Router>
       <div className="bg-slate-100">
@@ -61,7 +61,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<HomePage products={products} featuredProducts={featuredProducts} handleAddToCart={handleAddToCart} />}>
           </Route>
-          <Route path="/shoppingcart" element={<ShoppingCart />}>
+          <Route path="/shoppingcart" element={<ShoppingCart cart={cart.line_items} />}>
           </Route>
         </Routes>
       </div>
