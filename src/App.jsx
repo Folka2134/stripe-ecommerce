@@ -13,11 +13,27 @@ import { ShoppingCart } from "./pages/ShoppingCart/ShoppingCart";
 
 const App = () => {
   const [products, setProducts] = useState([])
+  const [cart, setCart] = useState({})
+
   const featuredProducts = []
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list()
     setProducts(data)
+  }
+
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve())
+  }
+
+  const handleAddToCart = async (productId, quantity) => {
+    const item = await commerce.cart.add(productId, quantity)
+    setCart(item.cart)
+  }
+
+  const emptyCart = async () => {
+    const cart = await commerce.cart.empty()
+    setCart(cart)
   }
 
   const fetchFeaturedProducts = () => {
@@ -32,6 +48,7 @@ const App = () => {
 
   useEffect(() => {
     fetchProducts()
+    fetchCart()
   }, []);
 
   fetchFeaturedProducts()
@@ -39,9 +56,9 @@ const App = () => {
   return (
     <Router>
       <div className="bg-slate-100">
-        <NavBar />
+        <NavBar emptyCart={emptyCart} />
         <Routes>
-          <Route exact path="/" element={<HomePage products={products} featuredProducts={featuredProducts} />}>
+          <Route exact path="/" element={<HomePage products={products} featuredProducts={featuredProducts} handleAddToCart={handleAddToCart} />}>
           </Route>
           <Route path="/shoppingcart" element={<ShoppingCart />}>
           </Route>
